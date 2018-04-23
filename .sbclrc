@@ -1,0 +1,9 @@
+(require :asdf)
+
+(setf asdf:*central-registry*
+      (list* '*default-pathname-defaults*
+             #p"/home/michael/cl/systems/"
+             #p"/usr/share/common-lisp/systems/"
+             asdf:*central-registry*))
+
+;(load "/usr/lib/quicklisp/setup")

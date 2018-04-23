@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/michael/backgrounds/nanomortis/upscale/1920x1080/night-glow.png",
+    "alpha": "100",
+    "special": {
+        "background": "#05050E",
+        "foreground": "#f6e3c9",
+        "cursor": "#f6e3c9"
+    },
+    "colors": {
+        "color0": "#05050E",
+        "color1": "#C17B68",
+        "color2": "#D79476",
+        "color3": "#6D6C85",
+        "color4": "#8F7B88",
+        "color5": "#A78C92",
+        "color6": "#E7A591",
+        "color7": "#f6e3c9",
+        "color8": "#ac9e8c",
+        "color9": "#C17B68",
+        "color10": "#D79476",
+        "color11": "#6D6C85",
+        "color12": "#8F7B88",
+        "color13": "#A78C92",
+        "color14": "#E7A591",
+        "color15": "#f6e3c9"
+    }
+}

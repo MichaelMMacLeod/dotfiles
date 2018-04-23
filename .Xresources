@@ -1,0 +1,6 @@
+rofi.fullscreen: true
+
+*.font: xft:Hack:size=12
+emacs.font: Hack
+
+urxvt.scrollBar: false

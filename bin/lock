@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# locks the screen with a blurred image of current workspace
+
+scrot /tmp/lock_screen_tmp.png
+convert /tmp/lock_screen_tmp.png -blur 10x10 /tmp/lock_screen_tmp_blur.png
+i3lock -u -i /tmp/lock_screen_tmp_blur.png

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+[ $(pidof compton) ] && kill $(pidof compton)
+[ $(pidof sxhkd) ] && kill $(pidof sxhkd)
+[ $(pidof lemonbar) ] && kill $(pidof lemonbar)
+
+sxhkd &
+wal -f $HOME/.config/config-schemes/schemes/night-glow-mini/wal-scheme > /dev/null
+
+for MONITOR in $(bspc query -M); do
+    bspc monitor $MONITOR -g 1920x1080+0+0
+    bspc monitor $MONITOR -d 1 2 3 4 5 6 7 8 9 10
+done
+
+bspc config top_padding 0
+bspc config border_width 2
+
+bspc config window_gap 0
+bspc config split_ratio 0.50
+
+bspc config borderless_monocle true
+bspc config gapless_monocle true 
+
+bspc config normal_border_color "#344253"
+bspc config normal_border_color "#000000"
+bspc config active_border_color "#000000"
+bspc config focused_border_color "#F8F8F2"
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on

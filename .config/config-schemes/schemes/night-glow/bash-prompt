@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+echo "\e[30;47m\u \w\e[m\n\$ "

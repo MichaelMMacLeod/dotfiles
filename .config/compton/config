@@ -1,0 +1,24 @@
+# compton compositor configuration
+
+#
+# Shadow
+#
+
+shadow = true;
+no-dnd-shadow = true;
+no-dock-shadow = true;
+clear-shadow = true;
+shadow-radius = 10;
+shadow-offset-x = -15;
+shadow-offset-y = -15;
+shadow-opacity = 0.9;
+shadow-ignore-shaped = false;
+xinerama-shadow-crop = false;
+
+#
+# Opacity
+#
+
+opacity-rule = [
+    "90:class_g = 'URxvt'",
+];
