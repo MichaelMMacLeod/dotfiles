@@ -163,17 +163,6 @@
       (setf *alignment* old-alignment)
       (format s "%{~a}" *alignment*))))
 
-(defun bar-string (string &key (padding t) (padding-left "") (padding-right " "))
-  (if padding
-    (format t "~a~a~a" padding-left string padding-right)
-    (format t "~a" string)))
-
-(defun bar-symbol (value &key (padding t) (padding-left " ") (padding-right " "))
-  (let ((code-value (code-char value)))
-    (if padding
-      (format t "~a~c~a" padding-left code-value padding-right)
-      (format t "~c" code-value))))
-
 (defun bar-symbol (symbol)
   (code-char symbol))
 
