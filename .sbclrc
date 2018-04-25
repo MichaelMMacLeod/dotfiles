@@ -6,4 +6,25 @@
              #p"/usr/share/common-lisp/systems/"
              asdf:*central-registry*))
 
-;(load "/usr/lib/quicklisp/setup")
+(defmacro aif (test then &optional else)
+  "Anaphoric if; binds``it'' to the result of ``test''."
+  `(let ((it ,test))
+     (if it ,then ,else)))
+
+(defmacro alambda (args &body body)
+  "Anaphoric lambda; binds ``self'' to the lambda expression."
+  `(labels ((self ,args ,@body))
+     #'self))
+
+(defmacro with-gensyms ((&rest xs) &body body)
+  "Bind each symbol in ``xs'' to a gensym."
+  `(let (,@(loop for x in xs collect `(,x (gensym))))
+     ,@body))
+
+(defmacro once-only ((&rest xs) &body body)
+  "Expands into a form which evaluates ``xs'' from left to right, once only."
+  (let ((gensyms (loop repeat (length xs) collect (gensym))))
+    `(let (,@(loop for g in gensyms for x in xs collect `(,g (gensym))))
+       `(let (,,@(loop for g in gensyms for x in xs collect ``(,,g ,,x)))
+          ,(let (,@(loop for g in gensyms for x in xs collect `(,x ,g)))
+             ,@body)))))
