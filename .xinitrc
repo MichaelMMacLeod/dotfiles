@@ -13,3 +13,5 @@ xrdb ~/.Xresources
 exec bspwm
 
 #setxkbmap -option 'ctrl:nocaps'
+
+#exec gnome-session

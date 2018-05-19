@@ -2,7 +2,7 @@
 
 (asdf:operate 'asdf:load-op 'cl-ppcre)
 
-(defvar *background* #xaa000000)
+(defvar *background* #x00000000)
 (defvar *foreground* #xffffffff)
 (defvar *underline* #xffffffff)
 (defvar *alignment* "l")
@@ -66,10 +66,10 @@
         result))))
 
 (defun get-date () 
-  (bash "date +'%F'"))
+  (bash "date +'%A, %b %d'"))
 
 (defun get-time () 
-  (bash "date +'%T'"))
+  (bash "date +'%H:%M'"))
 
 (defun get-volume () 
   (bash "awk -F '[][]' '{ print $2 }' <(amixer -D pulse sget Master) | tail -n 1"))
@@ -183,50 +183,70 @@
 
 (loop
   (bar
-    (foreground #xffeceff1
-      (background #xaa000000
-        (left
+    (left
+      (foreground
+        #xfffefef3
+        (background
+          #x00000000
+          (background
+            #xff761c0d
+            (bar-padding)
+            (bar-symbol +desktop+)
+            (bar-padding)
+            (bar-string (get-focused-desktop))
+            (bar-padding))
           (bar-padding)
-          (bar-symbol +battery-full+)
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-string (get-focused-window))
+            (bar-padding)))))
+    (center
+      (foreground
+        #xfffefef3
+        (background
+          #x00000000
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-symbol +calandar+)
+            (bar-padding)
+            (bar-string (get-date))
+            (bar-padding))
           (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-battery)))
-          (bar-padding 2)
-          (bar-symbol +volume-up+)
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-symbol +clock+)
+            (bar-padding)
+            (bar-string (get-time))
+            (bar-padding)))))
+    (right
+      (foreground
+        #xfffefef3
+        (background
+          #x00000000
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-symbol +volume-up+)
+            (bar-padding)
+            (bar-string (get-volume))
+            (bar-padding))
           (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-volume)))
-          (bar-padding 2)
-          (bar-symbol +wifi+)
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-symbol +wifi+)
+            (bar-padding)
+            (bar-string (get-wifi))
+            (bar-padding))
           (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-wifi)))
-          (bar-padding 2)
-          (bar-symbol +desktop+)
-          (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-focused-desktop)))
-          (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-focused-window))))
-        (center
-          (bar-symbol +calandar+)
-          (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-date)))
-          (bar-padding 2)
-          (bar-symbol +clock+)
-          (bar-padding)
-          (underline #xffffffff
-            (bar-string (get-time))))
-        (right
-          (command "urxvt"
-            (bar-symbol +terminal+))
-          (bar-padding)
-          (command "firefox"
-            (bar-symbol +firefox+))
-          (bar-padding)
-          (command "rofi -show run -monitor -1 -config ~/.cache/wal/colors-rofi.rasi"
-            (bar-symbol +angle-double-up+))
-          (bar-padding)))))
+          (background
+            #xff393130
+            (bar-padding)
+            (bar-symbol +battery-full+)
+            (bar-padding)
+            (bar-string (get-battery))
+            (bar-padding))))))
   (sleep 0.5))

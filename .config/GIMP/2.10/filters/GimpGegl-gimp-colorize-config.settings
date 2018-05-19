@@ -1,0 +1,34 @@
+# settings
+
+(GimpGegl-gimp-colorize-config "2018-05-12 20:27:40"
+    (time 1526182060)
+    (hue 0.500000)
+    (saturation 0.000000)
+    (lightness -0.200000)
+    (color (color-rgb 0.400000 0.400000 0.400000)))
+(GimpGegl-gimp-colorize-config "2018-05-12 20:27:12"
+    (time 1526182032)
+    (hue 0.500000)
+    (saturation 0.000000)
+    (lightness 1.000000)
+    (color (color-rgb 1.000000 1.000000 1.000000)))
+(GimpGegl-gimp-colorize-config "2018-05-12 19:43:54"
+    (time 1526179434)
+    (hue 0.547700)
+    (saturation 0.000000)
+    (lightness -0.057000)
+    (color (color-rgb 0.471500 0.471500 0.471500)))
+(GimpGegl-gimp-colorize-config "2018-05-12 19:30:37"
+    (time 1526178637)
+    (hue 0.500000)
+    (saturation 0.000000)
+    (lightness 0.895238)
+    (color (color-rgb 0.947619 0.947619 0.947619)))
+(GimpGegl-gimp-colorize-config "2018-05-12 19:28:52"
+    (time 1526178532)
+    (hue 0.000000)
+    (saturation 0.000000)
+    (lightness 1.000000)
+    (color (color-rgb 1.000000 1.000000 1.000000)))
+
+# end of settings

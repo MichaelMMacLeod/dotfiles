@@ -1,0 +1,133 @@
+# GIMP sessionrc
+# 
+# This file takes session-specific info (that is info, you want to keep
+# between two GIMP sessions).  You are not supposed to edit it manually, but
+# of course you can do.  The sessionrc will be entirely rewritten every time
+# you quit GIMP.  If this file isn't found, defaults are used.
+
+(session-info "toplevel"
+    (factory-entry "gimp-empty-image-window")
+    (position 25 25)
+    (size 1870 970)
+    (open-on-exit))
+(session-info "toplevel"
+    (factory-entry "gimp-single-image-window")
+    (position 160 70)
+    (size 1140 780))
+(session-info "toplevel"
+    (factory-entry "gimp-file-open-dialog")
+    (position 660 301)
+    (size 840 630))
+(session-info "toplevel"
+    (factory-entry "gimp-image-new-dialog")
+    (position 670 296))
+(session-info "toplevel"
+    (factory-entry "gimp-toolbox-color-dialog")
+    (position 1231 353))
+(session-info "toplevel"
+    (factory-entry "gimp-file-export-dialog")
+    (position 307 205)
+    (size 840 630))
+(session-info "toplevel"
+    (factory-entry "gimp-file-save-dialog")
+    (position 454 205)
+    (size 840 630))
+(session-info "toplevel"
+    (factory-entry "gimp-perspective-tool-dialog")
+    (position 453 597))
+(session-info "toplevel"
+    (factory-entry "gimp-gegl-tool-dialog")
+    (position 408 423))
+(session-info "toplevel"
+    (factory-entry "gimp-color-balance-tool-dialog")
+    (position 100 281))
+(session-info "toplevel"
+    (factory-entry "gimp-colorize-tool-dialog")
+    (position 0 50))
+(session-info "toplevel"
+    (factory-entry "gimp-levels-tool-dialog")
+    (position 495 203)
+    (size 392 557))
+(session-info "toplevel"
+    (factory-entry "gimp-curves-tool-dialog")
+    (position 963 283)
+    (size 378 533))
+(session-info "toplevel"
+    (factory-entry "gimp-hue-saturation-tool-dialog")
+    (position 75 254))
+(session-info "toplevel"
+    (factory-entry "gimp-posterize-tool-dialog")
+    (position 768 459))
+(session-info "toplevel"
+    (factory-entry "gimp-rotate-tool-dialog")
+    (position 767 420))
+(session-info "toplevel"
+    (factory-entry "gimp-scale-tool-dialog")
+    (position 769 440))
+(session-info "toplevel"
+    (factory-entry "gimp-operation-tool-dialog")
+    (position 869 244))
+(session-info "toplevel"
+    (factory-entry "gimp-dock-window")
+    (position 1599 63)
+    (size 279 906)
+    (open-on-exit)
+    (aux-info
+        (show-image-menu "false")
+        (follow-active-image "true"))
+    (gimp-dock
+        (book
+            (current-page 0)
+            (dockable "gimp-layer-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-channel-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-undo-history"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-vectors-list"
+                (tab-style automatic)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true"))))
+        (book
+            (position 525)
+            (current-page 2)
+            (dockable "gimp-brush-grid"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-pattern-grid"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-gradient-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true"))))))
+(session-info "toplevel"
+    (factory-entry "gimp-toolbox-window")
+    (position 46 63)
+    (size 256 900)
+    (open-on-exit)
+    (gimp-toolbox
+        (book
+            (current-page 0)
+            (dockable "gimp-tool-options"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true"))))))
+
+(hide-docks no)
+(single-window-mode no)
+(tabs-position 0)
+(last-tip-shown 0)
+
+# end of sessionrc

@@ -6,11 +6,8 @@
 super + Return
 	urxvt
 
-alt + 1
-    scheme night-glow
-
-alt + 2
-    scheme night-glow-mini
+super + r
+    $HOME/.config/bspwm/bspwmrc
 
 # program launcher
 super + d
