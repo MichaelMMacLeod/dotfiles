@@ -1,4 +1,4 @@
-; gimp GtkAccelMap rc-file         -*- scheme -*-
+; gimp-2.10 GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
 ; (gtk_accel_path "<Actions>/tools/tools-force-increase" "")
@@ -349,6 +349,7 @@
 ; (gtk_accel_path "<Actions>/plug-in/script-fu-unsharp-mask" "")
 ; (gtk_accel_path "<Actions>/plug-in/plug-in-screenshot" "")
 ; (gtk_accel_path "<Actions>/image/image-resize" "")
+; (gtk_accel_path "<Actions>/filters/filters-spherize" "")
 ; (gtk_accel_path "<Actions>/tools/tools-operation" "")
 ; (gtk_accel_path "<Actions>/tools/tools-object-2-first" "")
 ; (gtk_accel_path "<Actions>/context/context-foreground-red-set" "")
@@ -532,6 +533,7 @@
 ; (gtk_accel_path "<Actions>/tools/tools-size-increase-percent" "")
 ; (gtk_accel_path "<Actions>/filters/filters-cubism" "")
 ; (gtk_accel_path "<Actions>/plug-in/plug-in-neon" "")
+; (gtk_accel_path "<Actions>/view/view-scroll-center" "<Shift>j")
 ; (gtk_accel_path "<Actions>/context/context-foreground-green-maximum" "")
 ; (gtk_accel_path "<Actions>/tools/tools-angle-decrease-skip" "")
 ; (gtk_accel_path "<Actions>/filters/filters-c2g" "")
@@ -1082,6 +1084,7 @@
 ; (gtk_accel_path "<Actions>/edit/edit-strong-undo" "<Primary><Shift>z")
 ; (gtk_accel_path "<Actions>/filters/filters-plasma" "")
 ; (gtk_accel_path "<Actions>/context/context-foreground-blue-increase" "")
+; (gtk_accel_path "<Actions>/filters/filters-recursive-transform" "")
 ; (gtk_accel_path "<Actions>/filters/filters-wind" "")
 ; (gtk_accel_path "<Actions>/plug-in/plug-in-lighting" "")
 ; (gtk_accel_path "<Actions>/dockable/dialogs-images" "")
@@ -1240,6 +1243,7 @@
 ; (gtk_accel_path "<Actions>/context/context-foreground-blue-decrease-skip" "")
 ; (gtk_accel_path "<Actions>/layers/layers-opacity-menu" "")
 ; (gtk_accel_path "<Actions>/view/view-rotate-345" "")
+; (gtk_accel_path "<Actions>/windows/windows-display-0001" "")
 ; (gtk_accel_path "<Actions>/quick-mask/quick-mask-toggle" "<Shift>q")
 ; (gtk_accel_path "<Actions>/dialogs/dialogs-vectors" "")
 ; (gtk_accel_path "<Actions>/tools/tools-fuzzy-select" "u")

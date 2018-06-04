@@ -10,6 +10,12 @@ xrandr --auto
 
 xrdb ~/.Xresources
 
+# necessary to use windows key as prefix key (which is set in stumpwm config)
+#xmodmap -e "clear mod4"
+#xmodmap -e "keycode 133 = F20"
+#
+#stumpwm
+
 exec bspwm
 
 #setxkbmap -option 'ctrl:nocaps'

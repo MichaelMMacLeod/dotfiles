@@ -22,7 +22,7 @@
 
 (defun bash (program-str &key (discard-newline t))
   (let ((input (make-string-input-stream program-str)))
-    (unwind-protect 
+    (unwind-protect
       (let ((output (with-output-to-string (output)
                       (sb-ext:run-program "bash" nil 
                                           :search t 
@@ -88,8 +88,8 @@
       (second lines))))
 
 (defun get-wifi ()
-  (let ((wifi-status (cl-ppcre:split 
-                       ":" 
+  (let ((wifi-status (cl-ppcre:split
+                       ":"
                        (bash "nmcli --terse device wifi | grep '*'"))))
     (format nil "~a ~a" (nth 1 wifi-status) (nth 4 wifi-status))))
 
@@ -97,7 +97,7 @@
   (bash "xprop -root _NET_CURRENT_DESKTOP | cut -d ' ' -f 3"))
 
 (defun bar (&rest xs)
-  (princ 
+  (princ
     (with-output-to-string (s)
       (dolist (x xs)
         (princ x s))
@@ -180,6 +180,58 @@
     (dolist (x xs)
       (princ x s))
     (format s "%{A}")))
+
+;(defun foreground (color &rest xs)
+;  (with-output-to-string (s)
+;    (let ((old-foreground *foreground*))
+;      (setf *foreground* color)
+;      (format s "%{F#~8,'0x}" *foreground*)
+;      (dolist (x xs)
+;        (princ x s))
+;      (setf *foreground* old-foreground)
+;      (format s "%{F#~8,'0x}" *foreground*))))
+;
+;(defun background (color &rest xs)
+;  (with-output-to-string (s)
+;    (let ((old-background *background*))
+;      (setf *background* color)
+;      (format s "%{B#~8,'0x}" *background*)
+;      (dolist (x xs)
+;        (princ x s))
+;      (setf *background* old-background)
+;      (format s "%{B#~8,'0x}" *background*))))
+
+(defun make-module (&key background foreground format function)
+  (lambda ()
+    (foreground
+     foreground
+     (background
+      background
+      (format nil format (funcall function))))))
+
+(defvar *desktop-module* (make-module :background #xff761c0d
+                                      :foreground #xfffefef3
+                                      :format " ~a "
+                                      :function #'get-focused-desktop))
+
+
+(defmacro bar+ (&key left)
+  `(bar
+    (left
+     (progn
+       ,@(loop for module in left collect `(funcall ,module))))))
+
+;(loop
+;  (bar+ :left (*desktop-module*))
+;  (sleep 0.5))
+
+;;; (bar+ :left (*desktop-module* *another-module*))
+;;; (loop
+;;;   (left
+;;;     (funcall *desktop-module*)
+;;;     (funcall *another-module*))
+;;;   (sleep 0.5))
+
 
 (loop
   (bar

@@ -3,3 +3,5 @@
 	name = Michael MacLeod
 [core]
 	editor = vim
+[url "git://github.com/ghc/packages-"]
+	insteadOf = git://github.com/ghc/packages/

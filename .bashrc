@@ -7,10 +7,12 @@
 
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 alias ls='ls --color=auto'
 alias mplayer='mplayer -ao pulse'
 alias top='htop'
+alias sbcl='rlwrap sbcl'
 
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1

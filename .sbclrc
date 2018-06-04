@@ -6,6 +6,9 @@
              #p"/usr/share/common-lisp/systems/"
              asdf:*central-registry*))
 
+; (push #p"/usr/share/common-lisp/systems/" asdf:*central-registry*
+; (asdf:operate 'asdf:load-op 'clx)
+
 (defmacro aif (test then &optional else)
   "Anaphoric if; binds IT to the result of TEST"
   `(let ((it ,test))
